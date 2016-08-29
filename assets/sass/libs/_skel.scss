@@ -267,6 +267,11 @@
 			.\33 u#{$x}, .\33 u\24#{$x} { width: 25%; clear: none; margin-left: 0; }
 			.\32 u#{$x}, .\32 u\24#{$x} { width: 16.6666666667%; clear: none; margin-left: 0; }
 			.\31 u#{$x}, .\31 u\24#{$x} { width: 8.3333333333%; clear: none; margin-left: 0; }
+			// 5 cels in row
+			.\31 u5#{$x}, .\31 u5\24#{$x} { width: 20%; clear: none; margin-left: 0; }
+			.\32 u5#{$x}, .\32 u5\24#{$x} { width: 40%; clear: none; margin-left: 0; }
+			.\33 u5#{$x}, .\33 u5\24#{$x} { width: 60%; clear: none; margin-left: 0; }
+			.\34 u5#{$x}, .\34 u5\24#{$x} { width: 80%; clear: none; margin-left: 0; }
 
 			.\31 2u\24#{$x} + *,
 			.\31 1u\24#{$x} + *,
@@ -279,7 +284,11 @@
 			.\34 u\24#{$x} + *,
 			.\33 u\24#{$x} + *,
 			.\32 u\24#{$x} + *,
-			.\31 u\24#{$x} + * {
+			.\31 u\24#{$x} + *,
+			.\31 u5\24#{$x} + *,
+			.\32 u5\24#{$x} + *,
+			.\33 u5\24#{$x} + *,
+			.\34 u5\24#{$x} + * {
 				clear: left;
 			}
 
@@ -294,6 +303,11 @@
 			.\-3u#{$x} { margin-left: 25% }
 			.\-2u#{$x} { margin-left: 16.6666666667% }
 			.\-1u#{$x} { margin-left: 8.3333333333% }
+			// 5 cels
+			.\-1u5#{$x} { margin-left: 20% }
+			.\-2u5#{$x} { margin-left: 20% }
+			.\-3u5#{$x} { margin-left: 20% }
+			.\-4u5#{$x} { margin-left: 20% }
 
 	}
 
