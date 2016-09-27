@@ -1,0 +1,78 @@
+// skel-baseline child rcom v.1.0.0 | (c) Reprezentuj | MIT Licence
+
+/* Slider */
+.slider {
+   background: #f6f6f6;
+	text-align: center;
+	padding: 0;
+	position: relative;
+	height: 550px;
+	width: 100%;
+	overflow: hidden;
+
+   .slide {
+      position: absolute;
+		top: 0;
+		left:0;
+		right: 0;
+		display: block;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 10;
+		background: white;
+      @include vendor('transform', 'translate(-50%, 0)');
+      @include vendor('transition', 'all #{_duration(long)} #{_easing(ease-out-back)}');
+      @include vendor('transition-delay', '0.1s');
+      &.active {
+			visibility: visible;
+			z-index:11;
+			opacity: 1;
+         @include vendor('transform', 'translate(0, 0)');
+         @include vendor('transition', 'all #{_duration(long)} #{_easing(ease-out-back)}');
+         @include vendor('transition-delay', '0.1s');
+         
+			.slide-image, .slide-content {
+            @include vendor('transform', 'perspective(1px) translate(0, -50%)');
+				opacity: 1;
+			}
+		}
+
+      .slide-image {
+			@include vendor('transition', 'all #{_duration(long)} #{_easing(ease-out-back)}');
+         @include vendor('transform', 'translate(-250%, -50%)');
+         @include vendor('transition-delay', '1.1s');
+         opacity: 0;
+			height: 100%;
+			position: relative;
+			.image.fit {
+				top: 50%;
+				position: absolute;
+            @include vendor('transform', 'translateY(-50%)');
+			}
+		}
+      .slider-content {
+			@include vendor('transition', 'all #{_duration(long)} #{_easing(ease-out-back)}');
+         @include vendor('transform', 'translate(250%, -50%)');
+         @include vendor('transition-delay', '1.3s');
+			opacity: 0;
+		}
+   }
+
+   @include breakpoint(small) {
+      .slide {
+         .slide-image {
+            position: absolute;
+            left: -12em;
+            max-width: 90%;
+            img {
+               max-height: 390px;
+               width: auto;
+            }
+         }
+         .slide-content p {
+            color: white;
+            text-shadow: 1px 1px black;
+         }
+      }
+   }
+}

@@ -3,15 +3,13 @@
 /* Footer */
 
 	#footer {
-		@include padding(4em, 0);
-		background: #f2f2f2;
+		@include padding(2em, 0);
+		background: #404040;
 
 		.copyright {
 			color: _palette(fg-light);
 			font-size: 0.9em;
-			margin: 0 0 _size(element-margin) 0;
-			padding: 0;
-			text-align: center;
+			padding-top: 0.2em;
 
 			li {
 				border-left: solid _size(border-width) _palette(border);
@@ -28,8 +26,21 @@
 			}
 		}
 
+		.footer-menu {
+			a {
+				color: _palette(fg-light);
+				text-decoration: none;
+				&:hover {
+					color: lighten(_palette(fg-light), 10);
+				}
+
+				&:active {
+					color: darken(_palette(fg-light), 10);
+				}
+			}
+		}
 		@include breakpoint(small) {
-			@include padding(3em, 0);
+			@include padding(2em, 0);
 
 			.copyright {
 				li {
