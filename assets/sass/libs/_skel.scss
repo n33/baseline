@@ -305,9 +305,14 @@
 			.\-1u#{$x} { margin-left: 8.3333333333% }
 			// 5 cels
 			.\-1u5#{$x} { margin-left: 20% }
-			.\-2u5#{$x} { margin-left: 20% }
-			.\-3u5#{$x} { margin-left: 20% }
-			.\-4u5#{$x} { margin-left: 20% }
+			.\-2u5#{$x} { margin-left: 40% }
+			.\-3u5#{$x} { margin-left: 60% }
+			.\-4u5#{$x} { margin-left: 80% }
+
+			.align-center#{$x} { text-align: center; }
+			.align-left#{$x} { text-align: left; }
+			.align-right#{$x} { text-align: right; }
+			.align-justify#{$x} { text-align: justify; }
 
 	}
 
@@ -315,7 +320,7 @@
 	/// @param {list} $gutters Gutters.
 	/// @param {string} $class Optional class name.
 	/// @param {integer} $multiplier Multiplier (default is 1).
-	@mixin grid-gutters($gutters, $class: null, $multiplier: 1) {
+	@mixin grid-gutters($gutters, $class: null, $multiplier: 0.8) {
 
 		// Expand gutters if it's not a list.
 			@if length($gutters) == 1 {

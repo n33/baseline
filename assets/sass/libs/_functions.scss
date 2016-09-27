@@ -34,3 +34,10 @@
 @function _size($keys...) {
 	@return val($size, $keys...);
 }
+
+/// Gets a easing value.
+/// @param {string} $keys Key(s).
+/// @return {string} Value.
+@function _easing($keys...) {
+	@return val($easing, $keys...);
+}
