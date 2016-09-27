@@ -5,9 +5,9 @@
 	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
-		font-size: 13pt;
+		font-size: 14pt;
 		font-weight: _font(weight);
-		line-height: 1.65;
+		line-height: 1.2;
 
 		@include breakpoint(xlarge) {
 			font-size: 11pt;
@@ -40,7 +40,7 @@
 	}
 
 	strong, b {
-		color: _palette(fg-bold);
+		// color: _palette(fg-bold);
 		font-weight: _font(weight-bold);
 	}
 
@@ -53,10 +53,10 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: _palette(fg-bold);
+		color: _palette(fg);
 		font-weight: _font(weight-bold);
-		line-height: 1.5;
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		line-height: 1.1;
+		margin: 0 0 (_size(element-margin) * 0.6) 0;
 
 		a {
 			color: inherit;
@@ -64,8 +64,12 @@
 		}
 	}
 
+	h1 {
+		font-size: 2.55em;
+	}
+
 	h2 {
-		font-size: 1.75em;
+		font-size: 1.95em;
 	}
 
 	h3 {
@@ -133,18 +137,14 @@
 		margin: _size(element-margin) 0;
 
 		&.major {
-			margin: (_size(element-margin) * 1.5) 0;
+			margin: (_size(element-margin) * 2) 0;
 		}
 	}
 
-	.align-left {
-		text-align: left;
+	.valign-center {
+		@include valign_center();
 	}
 
-	.align-center {
-		text-align: center;
-	}
-
-	.align-right {
-		text-align: right;
+	.margin-top {
+		margin-top: 4em;
 	}
