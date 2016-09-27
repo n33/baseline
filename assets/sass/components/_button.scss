@@ -10,25 +10,37 @@
 		@include vendor('appearance', 'none');
 		@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out');
 		background-color: _palette(accent2, bg);
-		border-radius: _size(border-radius);
+		border-radius: 0;
 		border: 0;
 		color: _palette(accent2, fg-bold) !important;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: _font(weight-bold);
-		height: 2.85em;
-		line-height: 2.95em;
-		padding: 0 1.5em;
+		height: 2.5em;
+		line-height: 2.55em;
+		padding: 0 1.7em;
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
 
 		&:hover {
-			background-color: lighten(_palette(accent2, bg), 5);
+			background-color: lighten(_palette(accent2, bg), 10);
 		}
 
 		&:active {
-			background-color: darken(_palette(accent2, bg), 5);
+			background-color: darken(_palette(accent2, bg), 10);
+		}
+
+		&.invert {
+			color: _palette(accent2, bg) !important;
+			background-color: _palette(accent2, fg-bold);
+
+			&:hover {
+				background-color: lighten(_palette(accent2, fg-bold), 10);
+			}
+			&:active {
+				background-color: darken(_palette(accent2, fg-bold), 10);
+			}
 		}
 
 		&.icon {
@@ -71,6 +83,17 @@
 					color: _palette(fg-light);
 				}
 			}
+
+			&.invert {
+				background-color: _palette(fg);
+				color: _palette(bg) !important;
+				&:hover {
+					background-color: lighten(_palette(fg), 10);
+				}
+				&:active {
+					background-color: darken(_palette(fg), 10);
+				}
+			}
 		}
 
 		&.special {
@@ -78,16 +101,76 @@
 			color: _palette(accent1, fg-bold) !important;
 
 			&:hover {
-				background-color: lighten(_palette(accent1, bg), 5);
+				background-color: lighten(_palette(accent1, bg), 10);
 			}
 
 			&:active {
-				background-color: darken(_palette(accent1, bg), 5);
+				background-color: darken(_palette(accent1, bg), 10);
+			}
+
+			&.invert {
+				background-color: _palette(accent1, fg-bold);
+				color: _palette(accent1, bg) !important;
+				&:hover {
+					background-color: _palette(accent1, bg);
+					color: _palette(accent1, fg-bold) !important;
+				}
+
+				&:active {
+					background-color: darken(_palette(accent1, bg), 10);
+					color: _palette(accent1, fg-bold) !important;
+				}
+			}
+		}
+
+		&.social {
+			&.facebook {
+				background-color: #3b5999;
+				color: _palette(accent1, fg-bold) !important;
+				&:hover {
+					background-color: lighten(#3b5999, 5);
+				}
+				&:active {
+					background-color: darken(#3b5999, 5);
+				}
+			}
+			&.twitter {
+				background-color: #55acee;
+				color: _palette(accent1, fg-bold) !important;
+				&:hover {
+					background-color: lighten(#55acee, 5);
+				}
+				&:active {
+					background-color: darken(#55acee, 5);
+				}
+			}
+			&.youtube {
+				background-color: #e52d27;
+				color: _palette(accent1, fg-bold) !important;
+				&:hover {
+					background-color: lighten(#e52d27, 5);
+				}
+				&:active {
+					background-color: darken(#e52d27, 5);
+				}
+			}
+			&.google-plus {
+				background-color: #dc4e41;
+				color: _palette(accent1, fg-bold) !important;
+				&:hover {
+					background-color: lighten(#dc4e41, 5);
+				}
+				&:active {
+					background-color: darken(#dc4e41, 5);
+				}
 			}
 		}
 
 		&.disabled,
-		&:disabled {
+		&:disabled,
+		&.disabled:hover,
+		&.disabled.invert,
+		&.disabled.invert:hover {
 			background-color: _palette(fg) !important;
 			box-shadow: inset 0 -0.15em 0 0 rgba(0,0,0,0.15);
 			color: _palette(bg) !important;

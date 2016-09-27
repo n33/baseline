@@ -19,6 +19,10 @@
 
 		li {
 			padding-left: 0.5em;
+			.data-value {
+				vertical-align: sub;
+				font-weight: bold;
+			}
 		}
 
 		&.alt {
@@ -26,7 +30,7 @@
 			padding-left: 0;
 
 			li {
-				border-top: solid _size(border-width) _palette(border);
+				border-top: 0;
 				padding: 0.5em 0;
 
 				&:first-child {
@@ -39,21 +43,69 @@
 		&.icons {
 			cursor: default;
 			list-style: none;
-			padding-left: 0;
+			padding-left: 3em;
+			position: relative;
 
 			li {
-				display: inline-block;
-				padding: 0 1em 0 0;
-
+				// display: inline-block;
+				// padding: 0 1em 0 0;
+				* {
+					color: _palette(fg);
+					text-decoration: none;
+				}
 				&:last-child {
 					padding-right: 0;
 				}
-
-				.icon {
-					&:before {
-						font-size: 2em;
-					}
+				.fa {
+					position: absolute;
+					left: 0;
+					width: 1em;
+					text-align:center;
+					color: _palette(fg-light);
 				}
+			}
+		}
+
+		&.quick-contact-list {
+			cursor: default;
+			display: inline-block;
+			list-style: none;
+			padding-left: 0;
+			margin: 0;
+			float: right;
+			@include valign_center();
+			li {
+				line-height: 1.2;
+				position: relative;
+				margin: 0 2em;
+				padding-left: 2em;
+				font-size: 14px;
+				display: inline-block;
+				float: left;
+				text-align: left;
+
+				i.fa {
+					position: absolute !important;
+					left: -0.3em;
+					text-align: right;
+					width: 28px;
+					@include valign_center();
+				}
+			}
+			@include breakpoint(large) {
+				li {
+					margin: 0 1em;
+				}
+			}
+			@include breakpoint(medium) {
+				float:none;
+				li {
+					float: none;
+					margin-bottom: 1em;
+				}
+			}
+			@include breakpoint(small) {
+
 			}
 		}
 
@@ -66,7 +118,7 @@
 				display: inline-block;
 				padding: 0 (_size(element-margin) * 0.5) 0 0;
 				vertical-align: middle;
-
+				position: relative;
 				&:last-child {
 					padding-right: 0;
 				}
@@ -160,6 +212,35 @@
 
 						&:first-child {
 							padding-top: 0;
+						}
+					}
+				}
+			}
+			&.icons {
+				padding-left: 0;
+				position:relative;
+				li {
+					padding: 0 0.5em 0 1.5em;
+					.fa.fa-lg {
+						position: absolute;
+						left: 0;
+						top: 4px;
+					}
+					&:last-child {
+						padding-right: 0;
+					}
+
+				}
+				@include breakpoint(small) {
+					margin-top: 1em;
+					li {
+						padding: 0 0.3 0 1em;
+					}
+				}
+				@include breakpoint(xsmall) {
+					li {
+						.fa {
+							display: none;
 						}
 					}
 				}

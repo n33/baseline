@@ -1,56 +1,94 @@
 // skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
 
 /* Image */
+figure {
+	position: relative;
+}
+.image {
+	border-radius: _size(border-radius);
+	border: 0;
+	display: inline-block;
+	position: relative;
 
-	.image {
+	img {
 		border-radius: _size(border-radius);
-		border: 0;
-		display: inline-block;
-		position: relative;
+		display: block;
+	}
+
+	&.left,
+	&.right {
+		max-width: 40%;
 
 		img {
-			border-radius: _size(border-radius);
-			display: block;
-		}
-
-		&.left,
-		&.right {
-			max-width: 40%;
-
-			img {
-				width: 100%;
-			}
-		}
-
-		&.left {
-			float: left;
-			padding: 0 1.5em 1em 0;
-			top: 0.25em;
-		}
-
-		&.right {
-			float: right;
-			padding: 0 0 1em 1.5em;
-			top: 0.25em;
-		}
-
-		&.fit {
-			display: block;
-			margin: 0 0 _size(element-margin) 0;
 			width: 100%;
-
-			img {
-				width: 100%;
-			}
-		}
-
-		&.main {
-			display: block;
-			margin: 0 0 (_size(element-margin) * 1.5) 0;
-			width: 100%;
-
-			img {
-				width: 100%;
-			}
 		}
 	}
+
+	&.left {
+		float: left;
+		padding: 0 1.5em 1em 0;
+		top: 0.25em;
+	}
+
+	&.right {
+		float: right;
+		padding: 0 0 1em 1.5em;
+		top: 0.25em;
+	}
+
+	&.fit {
+		display: block;
+		margin: 0 auto _size(element-margin) auto;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+
+		&.\39 0\25 {
+			width: 90%;
+		}
+		&.\38 0\25 {
+			width: 80%;
+		}
+		&.\37 0\25 {
+			width: 70%;
+		}
+		&.\36 0\25 {
+			width: 60%;
+		}
+	}
+
+	&.circle {
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	&.main {
+		display: block;
+		margin: 0 0 (_size(element-margin) * 1.5) 0;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+img {
+	height: auto;
+	max-width: 100%;
+	&.alignleft {
+		float: left;
+		margin: 0.5em 1em 0.5em 0;
+	}
+	&.alignright {
+		float: right;
+		margin: 0.5em 0 0.5em 1em;
+	}
+	&.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

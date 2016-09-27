@@ -4,14 +4,27 @@
 
 	form {
 		margin: 0 0 _size(element-margin) 0;
+		.row.uniform div {
+			padding-top: 1em;
+		}
 	}
 
-	label {
+	label, span.wpcf7-list-item-label {
 		color: _palette(fg-bold);
 		display: block;
 		font-size: 0.9em;
 		font-weight: _font(weight-bold);
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
+	}
+
+	div[role="alert"], span[role="alert"] {
+		color: red;
+	}
+	.ajax-loader {
+		max-height: 16px;
+		position: absolute;
+		top: 0.8em;
+		left: -1.2em;
 	}
 
 	input[type="text"],
@@ -21,10 +34,10 @@
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
-		background: _palette(border-bg);
-		border-radius: _size(border-radius);
+		background: _palette(bg);
+		border-radius: 0;
 		border: none;
-		border: solid _size(border-width) _palette(border);
+		border: solid _size(border-width) _palette(fg-bold);
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -39,6 +52,10 @@
 		&:focus {
 			border-color: _palette(accent1, bg);
 			box-shadow: 0 0 0 _size(border-width) _palette(accent1, bg);
+		}
+
+		&[aria-invalid="true"] {
+			border-color: red;
 		}
 	}
 
@@ -68,12 +85,14 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="tel"],
 	select {
 		height: _size(element-height);
 	}
 
 	textarea {
 		padding: 0.75em 1em;
+		resize: vertical;
 	}
 
 	input[type="checkbox"],
@@ -86,7 +105,7 @@
 		width: 1em;
 		z-index: -1;
 
-		& + label {
+		& + label, & + span.wpcf7-list-item-label {
 			@include icon;
 			color: _palette(fg);
 			cursor: pointer;
@@ -98,9 +117,9 @@
 			position: relative;
 
 			&:before {
-				background: _palette(border-bg);
+				background: _palette(bg);
 				border-radius: _size(border-radius);
-				border: solid _size(border-width) _palette(border);
+				border: solid _size(border-width) _palette(fg-bold);
 				content: '';
 				display: inline-block;
 				height: (_size(element-height) * 0.6);
@@ -113,7 +132,7 @@
 			}
 		}
 
-		&:checked + label {
+		&:checked + label, &:checked + span.wpcf7-list-item-label {
 			&:before {
 				background: _palette(accent2, bg);
 				border-color: _palette(accent2, bg);
@@ -122,7 +141,7 @@
 			}
 		}
 
-		&:focus + label {
+		&:focus + label, &:focus + span.wpcf7-list-item-label {
 			&:before {
 				border-color: _palette(accent1, bg);
 				box-shadow: 0 0 0 _size(border-width) _palette(accent1, bg);
@@ -131,7 +150,7 @@
 	}
 
 	input[type="checkbox"] {
-		& + label {
+		& + label, & + span.wpcf7-list-item-label {
 			&:before {
 				border-radius: _size(border-radius);
 			}
