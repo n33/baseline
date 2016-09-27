@@ -56,5 +56,13 @@
 	@import 'layout/header';
 	@import 'layout/nav';
 	@import 'layout/banner';
+	@import 'layout/slider';
+	@import 'layout/posts-slider';
 	@import 'layout/main';
 	@import 'layout/footer';
+
+// Theme modifications
+// @import 'theme/theme-styles';
+
+// Wordpress special styles
+	@import 'wordpress/wp-styles';
