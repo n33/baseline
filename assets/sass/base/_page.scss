@@ -30,5 +30,30 @@
 					@include vendor('transition', 'none !important');
 				}
 			}
+			#google-map-wrapper {
+			  display: block;
+			  position: relative;
+			  &::before {
+			    content: '';
+			    position: absolute;
+			    top: 0;
+			    width: 10%;
+			    height: 100%;
+			    z-index:10;
+			    right: 0;
+			    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 22%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+			    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+			  }
 
+			  @include breakpoint(small) {
+			    &::before {
+			      width: 20%;
+			    }
+			    #google-map {
+			      margin-bottom: 2em;
+			    }
+			  }
+			}
 	}
