@@ -20,3 +20,34 @@
 			padding: 0;
 		}
 	}
+
+	.widget-area {
+		padding-top: 2em;
+		.widget {
+			padding-top: 2em;
+		}
+	}
+
+	#products-categories {
+		padding-top: 4em;
+		.category {
+			padding: 0 1em;
+			position: relative;
+			p {
+				line-height: 1.5em;
+				font-weight: 100;
+			}
+			a.permalink {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				color: transparent;
+			}
+		}
+	}
+
+	.product {
+		padding-bottom: 4em;
+	}
